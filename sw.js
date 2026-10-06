@@ -1,6 +1,6 @@
 const BASE = new URL('./', self.location.href);
 const PREFIX = 'laufstark-pwa-' + encodeURIComponent(BASE.pathname) + '-';
-const CACHE = PREFIX + '88b4671969bb';
+const CACHE = PREFIX + '2e2c1ea6ab62';
 const ASSETS = ["index.html", "app.js", "data.js", "pwa.js", "manifest.webmanifest", "icon-180.png", "icon-192.png", "icon-512.png"].map(path => new URL(path, BASE).href);
 self.addEventListener('install', event => {
   event.waitUntil(caches.open(CACHE).then(cache => cache.addAll(ASSETS.map(url => new Request(url, {cache: 'reload'})))));
